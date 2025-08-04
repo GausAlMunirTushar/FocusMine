@@ -30,7 +30,7 @@ export default function ForgotPasswordPage() {
               <Timer className="h-5 w-5" />
             </div>
             <span className="font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              FocusNest
+              FocusMine
             </span>
           </Link>
         </div>

@@ -42,7 +42,7 @@ export default function SignUpPage() {
               <Timer className="h-5 w-5" />
             </div>
             <span className="font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              FocusNest
+              FocusMine
             </span>
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function SignUpPage() {
         <Card className="border-0 shadow-xl">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Create your account</CardTitle>
-            <CardDescription>Get started with FocusNest today</CardDescription>
+            <CardDescription>Get started with FocusMine today</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">

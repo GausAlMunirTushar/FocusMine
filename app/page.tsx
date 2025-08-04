@@ -378,7 +378,7 @@ export default function HomePage() {
 					</h2>
 					<p className="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
 						Join thousands of developers and knowledge workers who
-						use FocusNest's complete productivity suite to stay
+						use FocusMine's complete productivity suite to stay
 						focused and achieve their goals.
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -406,30 +406,23 @@ export default function HomePage() {
 			</section>
 
 			{/* Footer */}
-			<footer className="py-8 sm:py-12 px-4 bg-muted/30 border-t">
+			<footer className="py-4 sm:py-8 px-4 bg-muted/30 border-t">
 				<div className="container mx-auto">
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-center">
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center">
 						<div className="text-center sm:text-left">
 							<div className="flex items-center gap-2 justify-center sm:justify-start mb-3">
-								<div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
-									<Timer className="h-3 w-3 text-white" />
+								<div className="flex h-8 w-8 items-center justify-center rounded-lg ">
+									<Image
+								src="/focusmine.svg"
+								alt="Focus Mine Logo"
+								width={40}
+								height={40}
+							/>
 								</div>
-								<span className="font-bold">FocusNest</span>
+								<span className="font-bold">FocusMine</span>
 							</div>
 							<p className="text-sm text-muted-foreground">
 								Complete productivity suite for focused work.
-							</p>
-						</div>
-
-						<div className="text-center">
-							<p className="text-sm text-muted-foreground mb-2">
-								Created by
-							</p>
-							<p className="font-semibold">
-								Gaus Al Munir Tushar
-							</p>
-							<p className="text-xs text-muted-foreground">
-								Full Stack Developer
 							</p>
 						</div>
 
@@ -473,8 +466,9 @@ export default function HomePage() {
 
 					<div className="border-t mt-6 sm:mt-8 pt-4 sm:pt-6 text-center">
 						<p className="text-xs text-muted-foreground">
-							&copy; 2024 FocusNest. Made with ❤️ by Gaus Al Munir
-							Tushar. All rights reserved.
+							&copy; {new Date().getFullYear()} FocusMine. Made
+							with ❤️ by Gaus Al Munir Tushar. All rights
+							reserved.
 						</p>
 					</div>
 				</div>
