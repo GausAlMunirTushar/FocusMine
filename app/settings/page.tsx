@@ -66,7 +66,7 @@ export default function SettingsPage() {
             <CardContent>
               <div className="grid grid-cols-3 gap-4">
                 <Button
-                  variant={theme === "light" ? "default" : "outline"}
+                  variant={theme === "light" ? "outline" : "outline"}
                   onClick={() => setTheme("light")}
                   className="flex flex-col items-center gap-2 h-auto p-6"
                 >
