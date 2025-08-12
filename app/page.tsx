@@ -175,12 +175,12 @@ export default function HomePage() {
 						</DropdownMenu>
 
 						<div className="hidden sm:flex items-center gap-3">
-							<Link href="/auth/signin">
+							<Link href="/signin">
 								<Button variant="ghost" size="sm">
 									Sign In
 								</Button>
 							</Link>
-							<Link href="/auth/signup">
+							<Link href="/signup">
 								<Button
 									size="sm"
 									className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
@@ -207,10 +207,10 @@ export default function HomePage() {
 								</DropdownMenuTrigger>
 								<DropdownMenuContent align="end">
 									<DropdownMenuItem asChild>
-										<Link href="/auth/signin">Sign In</Link>
+										<Link href="/signin">Sign In</Link>
 									</DropdownMenuItem>
 									<DropdownMenuItem asChild>
-										<Link href="/auth/signup">Sign Up</Link>
+										<Link href="/signup">Sign Up</Link>
 									</DropdownMenuItem>
 								</DropdownMenuContent>
 							</DropdownMenu>
@@ -221,7 +221,7 @@ export default function HomePage() {
 
 			{/* Hero Section */}
 			<section className="py-8 sm:py-16 px-4">
-				<div className="max-w-7xl mx-auto text-center max-w-4xl">
+				<div className="container mx-auto text-center max-w-4xl">
 					<Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0">
 						✨ Complete Productivity Suite
 					</Badge>

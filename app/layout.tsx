@@ -7,7 +7,6 @@ import { AppProvider } from "@/contexts/app-context";
 import { LanguageProvider } from "@/contexts/language-context";
 import { CustomThemeProvider } from "@/contexts/theme-context";
 import { ProjectProvider } from "@/contexts/project-context";
-import { AppLayout } from "@/components/app-layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,9 +42,7 @@ export default function RootLayout({
 					<CustomThemeProvider>
 						<LanguageProvider>
 							<AppProvider>
-								<ProjectProvider>
-									<AppLayout>{children}</AppLayout>
-								</ProjectProvider>
+								<ProjectProvider>{children}</ProjectProvider>
 							</AppProvider>
 						</LanguageProvider>
 					</CustomThemeProvider>

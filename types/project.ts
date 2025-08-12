@@ -14,7 +14,7 @@ export interface Project {
 		totalTasks: number;
 		completedTasks: number;
 		totalPomodoros: number;
-		totalTimeSpent: number; // in minutes
+		totalTimeSpent: number; 
 		lastActivity: Date;
 	};
 }

@@ -17,6 +17,7 @@ const translations = {
 		"nav.timer": "Timer",
 		"nav.dashboard": "Dashboard",
 		"nav.tasks": "Tasks",
+		"nav.projects": "Projects",
 		"nav.settings": "Settings",
 		"nav.reports": "Reports",
 
