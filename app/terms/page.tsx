@@ -109,7 +109,7 @@ export default function TermsPage() {
 				</Card>
 
 				<div className="text-center mt-8">
-					<Link href="/auth/signup">
+					<Link href="/signup">
 						<Button variant="outline" className="bg-transparent">
 							<ArrowLeft className="w-4 h-4 mr-2" />
 							Back to Sign Up
