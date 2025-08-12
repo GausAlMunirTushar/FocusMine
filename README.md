@@ -10,35 +10,34 @@
 
 ### ✅ Project-Based Workspace
 
-- Create multiple **projects**
-- Each project has its own isolated:
-  - 📝 Tasks
-  - 🕒 Pomodoro sessions
-  - 📓 Notes (Markdown)
-  - 🗓️ Daily planner
-  - 📚 Learning goals
-  - 📈 Focus reports
-  - 🧠 Journals & logs
+-   Create multiple **projects**
+-   Each project has its own isolated:
+    -   📝 Tasks
+    -   🕒 Pomodoro sessions
+    -   📓 Notes (Markdown)
+    -   🗓️ Daily planner
+    -   📚 Learning goals
+    -   📈 Focus reports
+    -   🧠 Journals & logs
 
 ### 🛠️ Global Productivity Tools
 
-- Typing practice for developers
-- Mind map builder for ideas
-- Code snippet manager
-- Clipboard & quick scratchpad
-- Background focus music
-- Breathing / calming exercises
+-   Typing practice for developers
+-   Mind map builder for ideas
+-   Code snippet manager
+-   Clipboard & quick scratchpad
+-   Background focus music
+-   Breathing / calming exercises
 
 ---
 
 ## 🧱 Tech Stack
 
-- ⚛️ **React 19**
-- 🚀 **Next.js 15 App Router**
-- 🎨 **Tailwind CSS v4**
-- 🧩 **Shadcn UI**
-- ⌨️ **TypeScript**
-- ⚙️ LocalStorage / IndexedDB (no backend required)
+-   ⚛️ **React 19**
+-   🚀 **Next.js 15 App Router**
+-   🎨 **Tailwind CSS v4**
+-   🧩 **Shadcn UI**
+-   ⌨️ **TypeScript**
 
 ---
 
@@ -63,19 +62,19 @@
 
 ## 🔐 Privacy First
 
-- 🔓 No login required
-- 💾 All data saved **locally** on your browser
-- ☁️ Optional: Easy backend API integration planned
+-   🔓 No login required
+-   💾 All data saved **locally** on your browser
+-   ☁️ Optional: Easy backend API integration planned
 
 ---
 
 ## 🚧 Roadmap
 
-- [ ] PWA Support (offline-first)
-- [ ] Project sharing / collaboration
-- [ ] Export/Import projects as JSON or Markdown
-- [ ] AI-powered daily summary & insights
-- [ ] Google Calendar sync for planner
+-   [ ] PWA Support (offline-first)
+-   [ ] Project sharing / collaboration
+-   [ ] Export/Import projects as JSON or Markdown
+-   [ ] AI-powered daily summary & insights
+-   [ ] Google Calendar sync for planner
 
 ---
 
@@ -88,7 +87,7 @@
 ## 💻 Getting Started
 
 ```bash
-git clone https://github.com/your-username/focusmine.git
+git clone https://github.com/gausalmunirtushar/focusmine.git
 cd focusmine
 pnpm install  # or npm / yarn
 pnpm dev
