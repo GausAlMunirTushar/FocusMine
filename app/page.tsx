@@ -116,7 +116,7 @@ export default function HomePage() {
 		<div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
 			{/* Header */}
 			<header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-				<div className="container mx-auto px-4 h-16 flex items-center justify-between">
+				<div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
 					<Link href="/home" className="flex items-center gap-2">
 						<div className="flex h-8 w-8 items-center justify-center rounded-l text-white">
 							<Image
@@ -221,7 +221,7 @@ export default function HomePage() {
 
 			{/* Hero Section */}
 			<section className="py-8 sm:py-16 px-4">
-				<div className="container mx-auto text-center max-w-4xl">
+				<div className="max-w-7xl mx-auto text-center max-w-4xl">
 					<Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0">
 						✨ Complete Productivity Suite
 					</Badge>
@@ -273,7 +273,7 @@ export default function HomePage() {
 						</p>
 					</div>
 
-					<Card className="border shadow-xl bg-card/50 backdrop-blur">
+					<Card className="border bg-card/50 backdrop-blur">
 						<CardContent className="p-4 sm:p-6">
 							<PomodoroTimer embedded />
 						</CardContent>
@@ -298,7 +298,7 @@ export default function HomePage() {
 						{tools.map((tool, index) => (
 							<Link key={index} href={tool.href}>
 								<Card
-									className={`border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group h-full ${tool.bgColor}`}
+									className={`transition-all duration-300 cursor-pointer group h-full ${tool.bgColor}`}
 								>
 									<CardHeader className="text-center pb-4">
 										<div
@@ -407,17 +407,17 @@ export default function HomePage() {
 
 			{/* Footer */}
 			<footer className="py-4 sm:py-8 px-4 bg-muted/30 border-t">
-				<div className="container mx-auto">
+				<div className="max-w-7xl mx-auto">
 					<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center">
 						<div className="text-center sm:text-left">
 							<div className="flex items-center gap-2 justify-center sm:justify-start mb-3">
 								<div className="flex h-8 w-8 items-center justify-center rounded-lg ">
 									<Image
-								src="/focusmine.svg"
-								alt="Focus Mine Logo"
-								width={40}
-								height={40}
-							/>
+										src="/focusmine.svg"
+										alt="Focus Mine Logo"
+										width={40}
+										height={40}
+									/>
 								</div>
 								<span className="font-bold">FocusMine</span>
 							</div>
