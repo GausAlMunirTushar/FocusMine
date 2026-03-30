@@ -12,6 +12,7 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { NotificationSwitcher } from "@/components/notification-switcher";
 import { useState } from "react";
 
 export function WebHeader() {
@@ -55,6 +56,9 @@ export function WebHeader() {
 				</nav>
 
 				<div className="flex items-center gap-3">
+					{/* Notification Switcher */}
+					<NotificationSwitcher variant="icon" size="md" />
+
 					{/* Theme Switcher */}
 					<ThemeSwitcher variant="icon" size="md" />
 

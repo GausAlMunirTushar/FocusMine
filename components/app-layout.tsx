@@ -13,14 +13,16 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { NotificationSwitcher } from "@/components/notification-switcher";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
+	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { LogOut, User, Settings } from "lucide-react";
+import { LogOut, User, Settings, CreditCard, Key } from "lucide-react";
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
 	const pathname = usePathname();
@@ -72,15 +74,32 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 										<span className="text-xs text-muted-foreground">user@example.com</span>
 									</div>
 								</div>
-								<DropdownMenuItem>
-									<User className="mr-2 h-4 w-4" />
-									Profile
+								<DropdownMenuItem asChild>
+									<Link href="/profile">
+										<User className="mr-2 h-4 w-4" />
+										Profile
+									</Link>
 								</DropdownMenuItem>
-								<DropdownMenuItem>
-									<Settings className="mr-2 h-4 w-4" />
-									Account Settings
+								<DropdownMenuItem asChild>
+									<Link href="/settings/account">
+										<Settings className="mr-2 h-4 w-4" />
+										Account Settings
+									</Link>
 								</DropdownMenuItem>
-								<DropdownMenuItem className="text-red-600">
+								<DropdownMenuItem asChild>
+									<Link href="/settings/change-password">
+										<Key className="mr-2 h-4 w-4" />
+										Change Password
+									</Link>
+								</DropdownMenuItem>
+								<DropdownMenuItem asChild>
+									<Link href="/settings">
+										<CreditCard className="mr-2 h-4 w-4" />
+										Timer Settings
+									</Link>
+								</DropdownMenuItem>
+								<DropdownMenuSeparator />
+								<DropdownMenuItem className="text-red-600 cursor-pointer">
 									<LogOut className="mr-2 h-4 w-4" />
 									Log out
 								</DropdownMenuItem>
