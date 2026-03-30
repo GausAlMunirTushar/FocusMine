@@ -7,9 +7,6 @@ import {
 	CheckSquare,
 	Settings,
 	BarChart3,
-	Globe,
-	Moon,
-	Sun,
 	FileText,
 	Calendar,
 	BookOpen,
@@ -20,7 +17,6 @@ import {
 import {
 	Sidebar,
 	SidebarContent,
-	SidebarFooter,
 	SidebarGroup,
 	SidebarGroupContent,
 	SidebarGroupLabel,
@@ -29,14 +25,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/language-context";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -99,8 +88,7 @@ const menuItems = [
 ];
 
 export function AppSidebar() {
-	const { theme, setTheme } = useTheme();
-	const { language, setLanguage, t } = useLanguage();
+	const { t } = useLanguage();
 	const pathname = usePathname();
 
 	return (
@@ -150,72 +138,6 @@ export function AppSidebar() {
 					</SidebarGroupContent>
 				</SidebarGroup>
 			</SidebarContent>
-
-			<SidebarFooter>
-				<SidebarMenu>
-					<SidebarMenuItem>
-						<DropdownMenu>
-							<DropdownMenuTrigger asChild>
-								<SidebarMenuButton>
-									{theme === "dark" ? (
-										<Moon className="h-4 w-4" />
-									) : (
-										<Sun className="h-4 w-4" />
-									)}
-									<span>{t("settings.theme")}</span>
-								</SidebarMenuButton>
-							</DropdownMenuTrigger>
-							<DropdownMenuContent side="top" align="start">
-								<DropdownMenuItem
-									onClick={() => setTheme("light")}
-								>
-									<Sun className="h-4 w-4 mr-2" />
-									{t("settings.light")}
-								</DropdownMenuItem>
-								<DropdownMenuItem
-									onClick={() => setTheme("dark")}
-								>
-									<Moon className="h-4 w-4 mr-2" />
-									{t("settings.dark")}
-								</DropdownMenuItem>
-								<DropdownMenuItem
-									onClick={() => setTheme("system")}
-								>
-									<Settings className="h-4 w-4 mr-2" />
-									{t("settings.system")}
-								</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
-					</SidebarMenuItem>
-
-					<SidebarMenuItem>
-						<DropdownMenu>
-							<DropdownMenuTrigger asChild>
-								<SidebarMenuButton>
-									<Globe className="h-4 w-4" />
-									<span>
-										{language === "en"
-											? "English"
-											: "বাংলা"}
-									</span>
-								</SidebarMenuButton>
-							</DropdownMenuTrigger>
-							<DropdownMenuContent side="top" align="start">
-								<DropdownMenuItem
-									onClick={() => setLanguage("en")}
-								>
-									English
-								</DropdownMenuItem>
-								<DropdownMenuItem
-									onClick={() => setLanguage("bn")}
-								>
-									বাংলা
-								</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
-					</SidebarMenuItem>
-				</SidebarMenu>
-			</SidebarFooter>
 		</Sidebar>
 	);
 }

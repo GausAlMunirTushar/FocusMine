@@ -8,18 +8,13 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-	Sun,
-	Moon,
-	Monitor,
-	Menu,
-} from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { useState } from "react";
 
 export function WebHeader() {
-	const { theme, setTheme } = useTheme();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	const navLinks = [
@@ -61,46 +56,10 @@ export function WebHeader() {
 
 				<div className="flex items-center gap-3">
 					{/* Theme Switcher */}
-					<DropdownMenu>
-						<DropdownMenuTrigger asChild>
-							<Button
-								variant="ghost"
-								size="sm"
-								className="h-9 w-9 p-0"
-							>
-								{theme === "dark" ? (
-									<Moon className="h-4 w-4" />
-								) : theme === "light" ? (
-									<Sun className="h-4 w-4" />
-								) : (
-									<Monitor className="h-4 w-4" />
-								)}
-								<span className="sr-only">
-									Toggle theme
-								</span>
-							</Button>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent align="end">
-							<DropdownMenuItem
-								onClick={() => setTheme("light")}
-							>
-								<Sun className="h-4 w-4 mr-2" />
-								Light
-							</DropdownMenuItem>
-							<DropdownMenuItem
-								onClick={() => setTheme("dark")}
-							>
-								<Moon className="h-4 w-4 mr-2" />
-								Dark
-							</DropdownMenuItem>
-							<DropdownMenuItem
-								onClick={() => setTheme("system")}
-							>
-								<Monitor className="h-4 w-4 mr-2" />
-								System
-							</DropdownMenuItem>
-						</DropdownMenuContent>
-					</DropdownMenu>
+					<ThemeSwitcher variant="icon" size="md" />
+
+					{/* Language Switcher */}
+					<LanguageSwitcher variant="toggle" size="sm" />
 
 					<div className="hidden sm:flex items-center gap-3">
 						<Link href="/signin">
