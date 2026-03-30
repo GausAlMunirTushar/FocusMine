@@ -11,12 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
 	Timer,
 	Target,
 	BarChart3,
@@ -24,21 +18,11 @@ import {
 	CheckSquare,
 	ArrowRight,
 	Play,
-	Github,
-	Linkedin,
-	Mail,
-	Twitter,
-	Sun,
-	Moon,
-	Monitor,
-	Menu,
 	FileText,
 	Calendar,
 	BookOpen,
 } from "lucide-react";
 import Link from "next/link";
-import { useLanguage } from "@/contexts/language-context";
-import { useTheme } from "next-themes";
 import { PomodoroTimer } from "@/components/pomodoro-timer";
 
 const tools = [
@@ -109,115 +93,8 @@ const tools = [
 ];
 
 export default function HomePage() {
-	const { t } = useLanguage();
-	const { theme, setTheme } = useTheme();
-
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-			{/* Header */}
-			<header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-				<div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-					<Link href="/home" className="flex items-center gap-2">
-						<div className="flex h-8 w-8 items-center justify-center rounded-l text-white">
-							<Image
-								src="/focusmine.svg"
-								alt="Focus Mine Logo"
-								width={40}
-								height={40}
-							/>
-						</div>
-						<span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-							FocusMine
-						</span>
-					</Link>
-
-					<div className="flex items-center gap-3">
-						{/* Theme Switcher */}
-						<DropdownMenu>
-							<DropdownMenuTrigger asChild>
-								<Button
-									variant="ghost"
-									size="sm"
-									className="h-9 w-9 p-0"
-								>
-									{theme === "dark" ? (
-										<Moon className="h-4 w-4" />
-									) : theme === "light" ? (
-										<Sun className="h-4 w-4" />
-									) : (
-										<Monitor className="h-4 w-4" />
-									)}
-									<span className="sr-only">
-										Toggle theme
-									</span>
-								</Button>
-							</DropdownMenuTrigger>
-							<DropdownMenuContent align="end">
-								<DropdownMenuItem
-									onClick={() => setTheme("light")}
-								>
-									<Sun className="h-4 w-4 mr-2" />
-									Light
-								</DropdownMenuItem>
-								<DropdownMenuItem
-									onClick={() => setTheme("dark")}
-								>
-									<Moon className="h-4 w-4 mr-2" />
-									Dark
-								</DropdownMenuItem>
-								<DropdownMenuItem
-									onClick={() => setTheme("system")}
-								>
-									<Monitor className="h-4 w-4 mr-2" />
-									System
-								</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
-
-						<div className="hidden sm:flex items-center gap-3">
-							<Link href="/signin">
-								<Button variant="ghost" size="sm">
-									Sign In
-								</Button>
-							</Link>
-							<Link href="/signup">
-								<Button
-									size="sm"
-									className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
-								>
-									Sign Up
-								</Button>
-							</Link>
-						</div>
-
-						{/* Mobile menu */}
-						<div className="sm:hidden">
-							<DropdownMenu>
-								<DropdownMenuTrigger asChild>
-									<Button
-										variant="ghost"
-										size="sm"
-										className="h-9 w-9 p-0"
-									>
-										<Menu className="h-4 w-4" />
-										<span className="sr-only">
-											Open menu
-										</span>
-									</Button>
-								</DropdownMenuTrigger>
-								<DropdownMenuContent align="end">
-									<DropdownMenuItem asChild>
-										<Link href="/signin">Sign In</Link>
-									</DropdownMenuItem>
-									<DropdownMenuItem asChild>
-										<Link href="/signup">Sign Up</Link>
-									</DropdownMenuItem>
-								</DropdownMenuContent>
-							</DropdownMenu>
-						</div>
-					</div>
-				</div>
-			</header>
 
 			{/* Hero Section */}
 			<section className="py-8 sm:py-16 px-4">
@@ -404,75 +281,6 @@ export default function HomePage() {
 					</div>
 				</div>
 			</section>
-
-			{/* Footer */}
-			<footer className="py-4 sm:py-8 px-4 bg-muted/30 border-t">
-				<div className="max-w-7xl mx-auto">
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center">
-						<div className="text-center sm:text-left">
-							<div className="flex items-center gap-2 justify-center sm:justify-start mb-3">
-								<div className="flex h-8 w-8 items-center justify-center rounded-lg ">
-									<Image
-										src="/focusmine.svg"
-										alt="Focus Mine Logo"
-										width={40}
-										height={40}
-									/>
-								</div>
-								<span className="font-bold">FocusMine</span>
-							</div>
-							<p className="text-sm text-muted-foreground">
-								Complete productivity suite for focused work.
-							</p>
-						</div>
-
-						<div className="flex justify-center lg:justify-end gap-2">
-							<a
-								href="https://github.com/gausalmunirtushar"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-background"
-							>
-								<Github className="w-5 h-5" />
-								<span className="sr-only">GitHub</span>
-							</a>
-							<a
-								href="https://linkedin.com/in/gausalmunirtushar"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-background"
-							>
-								<Linkedin className="w-5 h-5" />
-								<span className="sr-only">LinkedIn</span>
-							</a>
-							<a
-								href="https://twitter.com/gausalmunir"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-background"
-							>
-								<Twitter className="w-5 h-5" />
-								<span className="sr-only">Twitter</span>
-							</a>
-							<a
-								href="mailto:gausalmunirtushar@gmail.com"
-								className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-background"
-							>
-								<Mail className="w-5 h-5" />
-								<span className="sr-only">Email</span>
-							</a>
-						</div>
-					</div>
-
-					<div className="border-t mt-6 sm:mt-8 pt-4 sm:pt-6 text-center">
-						<p className="text-xs text-muted-foreground">
-							&copy; {new Date().getFullYear()} FocusMine. Made
-							with ❤️ by Gaus Al Munir Tushar. All rights
-							reserved.
-						</p>
-					</div>
-				</div>
-			</footer>
 		</div>
 	);
 }

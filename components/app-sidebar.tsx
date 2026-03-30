@@ -14,6 +14,8 @@ import {
 	Calendar,
 	BookOpen,
 	FolderOpen,
+	Users,
+	MessageSquare,
 } from "lucide-react";
 import {
 	Sidebar,
@@ -73,6 +75,16 @@ const menuItems = [
 		title: "Learning",
 		url: "/learning",
 		icon: BookOpen,
+	},
+	{
+		title: "nav.standups",
+		url: "/standups",
+		icon: MessageSquare,
+	},
+	{
+		title: "nav.members",
+		url: "/members",
+		icon: Users,
 	},
 	{
 		title: "nav.reports",
