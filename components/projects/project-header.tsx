@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { ArrowLeft, MoreHorizontal, Star, Archive, Settings, Download } from "lucide-react"
+import { ArrowLeft, MoreHorizontal, Star, Archive, Settings, Download, Users } from "lucide-react"
 import type { Project } from "@/types/project"
 import Link from "next/link"
 
@@ -41,6 +41,12 @@ export function ProjectHeader({ project, onEdit, onToggleFavorite, onToggleArchi
                   <h1 className="text-xl font-bold">{project.name}</h1>
                   {project.isFavorite && <Star className="w-4 h-4 text-yellow-500 fill-current" />}
                   {project.isArchived && <Badge variant="secondary">Archived</Badge>}
+                  {project.teamId && (
+                    <Badge variant="outline" className="flex items-center gap-1">
+                      <Users className="w-3 h-3" />
+                      {project.teamId}
+                    </Badge>
+                  )}
                 </div>
                 {project.description && <p className="text-sm text-muted-foreground">{project.description}</p>}
               </div>

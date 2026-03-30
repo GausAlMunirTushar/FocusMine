@@ -8,13 +8,14 @@ export interface Project {
 	emoji?: string;
 	isFavorite: boolean;
 	isArchived: boolean;
+	teamId?: string; // "personal" (undefined), "development", "design", etc.
 	createdAt: Date;
 	updatedAt: Date;
 	stats: {
 		totalTasks: number;
 		completedTasks: number;
 		totalPomodoros: number;
-		totalTimeSpent: number; 
+		totalTimeSpent: number;
 		lastActivity: Date;
 	};
 }

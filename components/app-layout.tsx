@@ -41,7 +41,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 						<SidebarTrigger className="-ml-1" />
 					</div>
 					
-					<div className="flex items-center gap-2">
+					<div className="flex items-center gap-1">
 						{/* Notification Switcher */}
 						<NotificationSwitcher variant="icon" size="md" />
 
@@ -56,7 +56,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 							<DropdownMenuTrigger asChild>
 								<Button variant="ghost" size="icon" className="relative">
 									<Avatar className="h-8 w-8">
-										<AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white text-sm">
+										<AvatarFallback className="bg-primary text-primary-foreground text-sm">
 											U
 										</AvatarFallback>
 									</Avatar>
@@ -65,7 +65,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 							<DropdownMenuContent align="end" className="w-56">
 								<div className="flex items-center gap-2 p-2 border-b mb-1">
 									<Avatar className="h-8 w-8">
-										<AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white text-sm">
+										<AvatarFallback className="bg-primary text-primary-foreground text-sm">
 											U
 										</AvatarFallback>
 									</Avatar>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image"
 import {
 	Timer,
 	LayoutDashboard,
@@ -25,6 +24,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { OrganizationSwitcher } from "@/components/organization-switcher";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -94,24 +94,14 @@ export function AppSidebar() {
 	return (
 		<Sidebar>
 			<SidebarHeader>
-				<div className="flex items-center gap-2 px-2 py-1">
-					<div className="flex h-8 w-8 items-center justify-center rounded-lg">
-						<Image
-								src="/focusmine.svg"
-								alt="Focus Mine Logo"
-								width={40}
-								height={40}
-							/>
-					</div>
-							<h1 className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-							FocusMine
-							</h1>
+				<div className="px-2 py-2">
+					{/* Organization Switcher */}
+					<OrganizationSwitcher />
 				</div>
 			</SidebarHeader>
 
 			<SidebarContent>
 				<SidebarGroup>
-					<SidebarGroupLabel>Navigation</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
 							{menuItems.map((item) => (
@@ -125,7 +115,7 @@ export function AppSidebar() {
 									>
 										<Link href={item.url}>
 											<item.icon />
-											<span>
+											<span className="truncate">
 												{item.title.startsWith("nav.")
 													? t(item.title)
 													: item.title}

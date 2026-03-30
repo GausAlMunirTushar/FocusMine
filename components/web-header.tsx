@@ -29,7 +29,7 @@ export function WebHeader() {
 		<header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
 			<div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
 				<Link href="/" className="flex items-center gap-2">
-					<div className="flex h-8 w-8 items-center justify-center rounded-l text-white">
+					<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
 						<Image
 							src="/focusmine.svg"
 							alt="Focus Mine Logo"
@@ -37,7 +37,7 @@ export function WebHeader() {
 							height={40}
 						/>
 					</div>
-					<span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+					<span className="font-bold text-xl text-foreground">
 						FocusMine
 					</span>
 				</Link>

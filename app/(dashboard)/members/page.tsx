@@ -292,7 +292,7 @@ export default function MembersPage() {
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
                   <Avatar className="h-12 w-12">
-                    <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white">
+                    <AvatarFallback className="bg-primary text-primary-foreground">
                       {getInitials(member.name)}
                     </AvatarFallback>
                   </Avatar>

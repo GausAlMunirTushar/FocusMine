@@ -77,7 +77,7 @@ export default function ProfilePage() {
 						<div className="flex justify-center mb-4">
 							<div className="relative">
 								<Avatar className="h-24 w-24">
-									<AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white text-3xl">
+									<AvatarFallback className="bg-primary text-primary-foreground text-3xl">
 										JD
 									</AvatarFallback>
 								</Avatar>

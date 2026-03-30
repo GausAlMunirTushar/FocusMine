@@ -31,79 +31,63 @@ const tools = [
 		description: "25-minute focused work sessions with customizable breaks",
 		icon: Timer,
 		href: "/timer",
-		color: "from-blue-500 to-blue-600",
-		bgColor: "bg-blue-50 dark:bg-blue-950/20",
 	},
 	{
 		name: "Task Manager",
 		description: "Organize and track your tasks with Pomodoro integration",
 		icon: CheckSquare,
 		href: "/tasks",
-		color: "from-green-500 to-green-600",
-		bgColor: "bg-green-50 dark:bg-green-950/20",
 	},
 	{
 		name: "Notes Editor",
 		description: "Write and organize notes with Markdown support",
 		icon: FileText,
 		href: "/notes",
-		color: "from-purple-500 to-purple-600",
-		bgColor: "bg-purple-50 dark:bg-purple-950/20",
 	},
 	{
 		name: "Daily Planner",
 		description: "Visual time-block planner with drag-and-drop",
 		icon: Calendar,
 		href: "/planner",
-		color: "from-indigo-500 to-indigo-600",
-		bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
 	},
 	{
 		name: "Learning Tracker",
 		description: "Track progress on books, courses, and learning goals",
 		icon: BookOpen,
 		href: "/learning",
-		color: "from-teal-500 to-teal-600",
-		bgColor: "bg-teal-50 dark:bg-teal-950/20",
 	},
 	{
 		name: "Dashboard",
 		description: "Overview of your productivity and progress",
 		icon: Target,
 		href: "/dashboard",
-		color: "from-orange-500 to-orange-600",
-		bgColor: "bg-orange-50 dark:bg-orange-950/20",
 	},
 	{
 		name: "Analytics",
 		description: "Detailed reports and productivity insights",
 		icon: BarChart3,
 		href: "/reports",
-		color: "from-red-500 to-red-600",
-		bgColor: "bg-red-50 dark:bg-red-950/20",
 	},
 	{
 		name: "Settings",
 		description: "Customize timers, themes, and preferences",
 		icon: Settings,
 		href: "/settings",
-		color: "from-gray-500 to-gray-600",
-		bgColor: "bg-gray-50 dark:bg-gray-950/20",
 	},
 ];
 
 export default function HomePage() {
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+		<div className="min-h-screen bg-background">
 
 			{/* Hero Section */}
 			<section className="py-8 sm:py-16 px-4">
 				<div className="container mx-auto text-center max-w-4xl">
-					<Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0">
+					<Badge className="mb-4 bg-primary text-primary-foreground border-0">
 						✨ Complete Productivity Suite
 					</Badge>
 
-					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
+					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
 						Focus. Learn. Achieve.
 					</h1>
 
@@ -117,7 +101,7 @@ export default function HomePage() {
 						<Link href="/timer">
 							<Button
 								size="lg"
-								className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8"
+								className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-8"
 							>
 								<Play className="w-4 h-4 mr-2" />
 								Start Focusing
@@ -175,13 +159,13 @@ export default function HomePage() {
 						{tools.map((tool, index) => (
 							<Link key={index} href={tool.href}>
 								<Card
-									className={`transition-all duration-300 cursor-pointer group h-full ${tool.bgColor}`}
+									className="transition-all duration-300 cursor-pointer group h-full hover-lift"
 								>
 									<CardHeader className="text-center pb-4">
 										<div
-											className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${tool.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}
+											className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg"
 										>
-											<tool.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+											<tool.icon className="w-6 h-6 sm:w-8 sm:h-8" />
 										</div>
 										<CardTitle className="text-lg sm:text-xl mb-2">
 											{tool.name}
@@ -211,32 +195,32 @@ export default function HomePage() {
 			<section className="py-8 sm:py-16 px-4 bg-muted/30">
 				<div className="container mx-auto">
 					<div className="grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-8 text-center max-w-6xl mx-auto">
-						<div className="p-6 rounded-lg bg-background/50 backdrop-blur border shadow-sm">
-							<div className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+						<div className="p-6 rounded-lg bg-surface border shadow-sm">
+							<div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
 								8
 							</div>
 							<p className="text-muted-foreground">
 								Productivity Tools
 							</p>
 						</div>
-						<div className="p-6 rounded-lg bg-background/50 backdrop-blur border shadow-sm">
-							<div className="text-3xl sm:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">
+						<div className="p-6 rounded-lg bg-surface border shadow-sm">
+							<div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
 								25:00
 							</div>
 							<p className="text-muted-foreground">
 								Perfect Focus Duration
 							</p>
 						</div>
-						<div className="p-6 rounded-lg bg-background/50 backdrop-blur border shadow-sm">
-							<div className="text-3xl sm:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+						<div className="p-6 rounded-lg bg-surface border shadow-sm">
+							<div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
 								2+
 							</div>
 							<p className="text-muted-foreground">
 								Languages Supported
 							</p>
 						</div>
-						<div className="p-6 rounded-lg bg-background/50 backdrop-blur border shadow-sm">
-							<div className="text-3xl sm:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">
+						<div className="p-6 rounded-lg bg-surface border shadow-sm">
+							<div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
 								100%
 							</div>
 							<p className="text-muted-foreground">
@@ -248,7 +232,7 @@ export default function HomePage() {
 			</section>
 
 			{/* CTA Section */}
-			<section className="py-12 sm:py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+			<section className="py-12 sm:py-20 px-4 bg-primary text-primary-foreground">
 				<div className="container mx-auto text-center">
 					<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
 						Ready to supercharge your productivity?
@@ -273,7 +257,7 @@ export default function HomePage() {
 							<Button
 								size="lg"
 								variant="outline"
-								className="w-full sm:w-auto px-8 border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
+								className="w-full sm:w-auto px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
 							>
 								Explore Dashboard
 							</Button>

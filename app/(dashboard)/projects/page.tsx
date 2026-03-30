@@ -5,10 +5,27 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { ProjectGrid } from "@/components/projects/project-grid"
 import { AddProjectModal } from "@/components/projects/add-project-modal"
 import { useProject } from "@/contexts/project-context"
-import { Plus, Search, FolderOpen, Star, Archive } from "lucide-react"
+import {
+  Plus,
+  Search,
+  FolderOpen,
+  Star,
+  Archive,
+  Users,
+  ChevronDown,
+  Building,
+} from "lucide-react"
 import type { Project } from "@/types/project"
 
 export default function ProjectsPage() {
@@ -17,6 +34,14 @@ export default function ProjectsPage() {
   const [editingProject, setEditingProject] = useState<Project | undefined>()
   const [searchQuery, setSearchQuery] = useState("")
   const [activeTab, setActiveTab] = useState("all")
+  const [selectedTeam, setSelectedTeam] = useState("all")
+
+  const teams = [
+    { id: "all", name: "All Projects", icon: FolderOpen },
+    { id: "personal", name: "Personal", icon: Users },
+    { id: "development", name: "Development Team", icon: Building },
+    { id: "design", name: "Design Team", icon: Building },
+  ]
 
   const handleCreateProject = () => {
     setEditingProject(undefined)
@@ -54,15 +79,21 @@ export default function ProjectsPage() {
       project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description?.toLowerCase().includes(searchQuery.toLowerCase())
 
+    // Filter by team
+    const matchesTeam = selectedTeam === "all" || 
+      (selectedTeam === "personal" && !project.teamId) ||
+      (selectedTeam === "development" && project.teamId === "development") ||
+      (selectedTeam === "design" && project.teamId === "design")
+
     switch (activeTab) {
       case "favorites":
-        return matchesSearch && project.isFavorite && !project.isArchived
+        return matchesSearch && matchesTeam && project.isFavorite && !project.isArchived
       case "archived":
-        return matchesSearch && project.isArchived
+        return matchesSearch && matchesTeam && project.isArchived
       case "active":
-        return matchesSearch && !project.isArchived
+        return matchesSearch && matchesTeam && !project.isArchived
       default:
-        return matchesSearch
+        return matchesSearch && matchesTeam
     }
   })
 
@@ -87,8 +118,39 @@ export default function ProjectsPage() {
         </Button>
       </div>
 
-      {/* Search and Filters */}
+      {/* Team Filter and Search */}
       <div className="flex flex-col sm:flex-row gap-4">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="justify-between w-full sm:w-auto">
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                {teams.find((t) => t.id === selectedTeam)?.name}
+              </div>
+              <ChevronDown className="w-4 h-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56">
+            <DropdownMenuLabel>Filter by Team</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {teams.map((team) => (
+              <DropdownMenuItem
+                key={team.id}
+                onClick={() => setSelectedTeam(team.id)}
+                className="cursor-pointer"
+              >
+                <team.icon className="w-4 h-4 mr-2" />
+                {team.name}
+                {selectedTeam === team.id && (
+                  <Badge variant="secondary" className="ml-auto text-xs">
+                    Active
+                  </Badge>
+                )}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
